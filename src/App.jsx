@@ -6,7 +6,7 @@ import Login from './Home/Login.jsx'
 // import SignUp from './Home/SignUp.jsx'
 import LiveWebcam from './WebCamInterface/Cameras.jsx'
 // import Alerts from './WebCamInterface/Alerts.jsx'
-
+import ProtectedRoute from './Home/protected.jsx';
 import Accounts from './WebCamInterface/Accounts.jsx'
 import Layout from './WebCamInterface/Layout.jsx'
 
@@ -29,19 +29,18 @@ function App() {
     //    element:<SignUp />
     //  },
 
-     {
-
-      element: <Layout />, 
-      children: [
- 
-          {
-          path: "Cameras", // "/Layout/cameras"
-          element: <LiveWebcam />,
-        },// default → Live feed
-        // { path: "Alerts", element: <Alerts /> },
-        { path: "Accounts", element: <Accounts /> },
-      ],
-    },
+    {
+    element: <ProtectedRoute />,  
+    children: [
+      {
+        element: <Layout />, 
+        children: [
+          { path: "Cameras", element: <LiveWebcam /> },
+          { path: "Accounts", element: <Accounts /> },
+        ],
+      },
+    ],
+  },
      
      
    
