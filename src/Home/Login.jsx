@@ -25,9 +25,9 @@ function Login() {
       } 
     } catch (err) {
       // 🔴 Handle Firebase Auth error codes here
-      if (err.code === "auth/wrong-password" || err.code === "auth/invalid-credential") {
+      if (err.code === "auth/wrong-password" ) {
         setError("Password is incorrect");
-      } else if (err.code === "auth/user-not-found") {
+      } else if (err.code === "auth/invalid-credential") {
         setError("No account found with this email");
       } else {
         setError("Something went wrong. Try again!");
@@ -70,7 +70,7 @@ function Login() {
           </div>
 
           <div>
-            <label className="block text-gray-300 mb-1.5 text-sm sm:text-base">
+            <label className="block text-gray-300 mb-2 text-sm sm:text-base">
               Password
             </label>
             <input
@@ -83,10 +83,13 @@ function Login() {
             />
           </div>
 
-          {/* 🔴 Error message */}
-          {error && (
-            <p className="text-red-500 text-sm text-center">{error}</p>
-          )}
+       {/* Error message with reserved space */}
+<div className="min-h-[16px] flex items-center justify-center">
+  {error && (
+    <p className="text-red-500 text-sm text-center">{error}</p>
+  )}
+</div>
+
 
           <button
             type="submit"

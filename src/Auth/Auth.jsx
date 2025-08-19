@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
     } catch (err) {
       setError(err.message);
       setLoading(false);
-      return null;
+      throw err;
     }
   };
 

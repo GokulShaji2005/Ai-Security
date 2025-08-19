@@ -70,7 +70,7 @@ const LiveWebcam = () => {
                       {/* {cameraOptions.find((cam) => cam.id === activeCamera)?.name} */}
                     </span>
                   </div>
-                  <span className="text-sm md:text-base font-medium">
+                  <span className="text-sm md:text-wbase font-medium">
                     {new Date().toLocaleTimeString()}
                   </span>
                 </div>
